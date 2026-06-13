@@ -1,7 +1,3 @@
-print("starting")
-
-
-        
 
 
 
@@ -3128,6 +3124,7 @@ local function runEliteStandardScript()
 
 
 
+do  -- [auto-scope]
 local VirtualInputManager = game:GetService("VirtualInputManager")
 
 local function pressKey(keyCode)
@@ -3147,6 +3144,7 @@ end
 
 -- Call it once
 toggleLasso()
+end  -- [auto-scope]
 
 wait(2)
 
@@ -3155,6 +3153,7 @@ wait(2)
 
 
 
+do  -- [auto-scope]
 local islandCenters = {
                         ["Mainland"] = Vector3.new(13.73, 14.00, -393.79),
                         ["Blizzard Island"] = Vector3.new(2460.62, -8.13, -6461.45),
@@ -3211,10 +3210,12 @@ local islandCenters = {
                     else
                         -- -- -- warn("Islands folder not found in Workspace")
                     end
+end  -- [auto-scope]
                     
                     
                     
                     --------------------------------remotes
+do  -- [auto-scope]
                     local folder = game:GetService("ReplicatedStorage").Communication.Events
                     
                     -- Iterate through all children in the folder and rename them with numbers starting from 1
@@ -3222,6 +3223,8 @@ local islandCenters = {
                         -- Rename the remote to the corresponding number
                         remote.Name = tostring(i)
                         end
+end  -- [auto-scope]
+do  -- [auto-scope]
                     local folder = game:GetService("ReplicatedStorage").Communication.Functions
                     
                     -- Check if the folder has children
@@ -3235,6 +3238,7 @@ local islandCenters = {
                             remote.Name = tostring(i)
                         end
                     end
+end  -- [auto-scope]
                     
                      
                     local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/TSBSCRIPTS/idkmyselfbro/refs/heads/main/idkmyself2'))()
@@ -4310,6 +4314,7 @@ end
 
 
 
+do  -- [auto-scope]
 local virtualInputManager = game:GetService("VirtualInputManager")
 local camera = workspace.CurrentCamera
 
@@ -4362,6 +4367,7 @@ local Toggle = sector8.element('Toggle', 'Click Event Rock', false, function(v)
         -- ---- -- print(("Stopped clicking.")
     end
 end)
+end  -- [auto-scope]
 
 
 
@@ -4598,6 +4604,7 @@ end)
 
 
 
+do  -- [auto-scope]
                 local islands = {
     ["Blizzard Island"] = Vector3.new(-324.62, 15.94, -3195.49),
     ["Forest Island"] = Vector3.new(-7148.92138671875, 19.177961349487305, 4583.14892578125),
@@ -4623,6 +4630,7 @@ for islandName, coords in pairs(islands) do
         -- -- -- warn(islandName .. " not found!")
     end
 end
+end  -- [auto-scope]
 
 
 
@@ -5391,6 +5399,7 @@ end
 
 -- === IUH-Only Sell helper functions === --
 
+do  -- [auto-scope]
 local function findDescendantByName_iuh(root, name)
     for _, child in ipairs(root:GetDescendants()) do
         if child.Name == name then
@@ -5513,6 +5522,7 @@ local toggle = sector.element('Toggle', 'Auto Sell Horses', false, function(v)
         isSelling = false
     end
 end)
+end  -- [auto-scope]
 
 
 
@@ -5807,6 +5817,7 @@ local data = require(refs.PlayerScripts.Priority.Data)
 
 --// Settings
 local CLICK_X, CLICK_Y = 613, 300     -- tuned click coords
+do  -- [auto-scope]
 local MOVE_SPEED = 30                   -- studs per second (lower = slower)
 local ABOVE_GROUND_OFFSET = Vector3.new(0, 3, 0)
 
@@ -5926,6 +5937,7 @@ local toggle = sector9.element('Toggle', 'Treasure Farm', false, function(v)
         _G.isTreasureAutoRunning = false
     end
 end)
+end  -- [auto-scope]
 
 
 
@@ -6127,6 +6139,7 @@ end)
 
 
 
+do  -- [auto-scope]
 local virtualInputManager = game:GetService("VirtualInputManager")
 local camera = workspace.CurrentCamera
 
@@ -6179,6 +6192,7 @@ local Toggle = sector9.element('Toggle', 'Auto Click Rocks ALL', false, function
         -- ---- -- print(("Stopped clicking.")
     end
 end)
+end  -- [auto-scope]
 
  
 
@@ -6196,6 +6210,7 @@ end)
 
 
                     
+do  -- [auto-scope]
                     local refs = require(game.ReplicatedStorage.References)
 
 local function activateEquippedItem()
@@ -6231,9 +6246,11 @@ local toggle = sector.element('Toggle', 'Auto Throw Lasso', false, function(v)
         end
     end
 end)
+end  -- [auto-scope]
 
                     
                     
+do  -- [auto-scope]
 local autoEquipTask -- Variable to track the running task
    local autoEquipEnabled = false -- Global flag to track if auto equip is enabled
 
@@ -6297,6 +6314,7 @@ local autoEquipTask -- Variable to track the running task
         autoEquipTask = nil
     end
 end)
+end  -- [auto-scope]
 
 
 
@@ -6457,6 +6475,7 @@ player.CharacterAdded:Connect(function()
     updateCharacter()
 end)
 
+do  -- [auto-scope]
 local function getCurrentTrainingInfoFromGui()
     local playerGui = player:FindFirstChild("PlayerGui")
     if not playerGui then return nil, nil end
@@ -6783,6 +6802,7 @@ local toggle = sector.element('Toggle', 'Auto Train (Reset First)', false, funct
         stopAutoTrain()
     end
 end)
+end  -- [auto-scope]
 
 local toggle = sector.element('Toggle', 'Auto Redeem Training Receipts', false, function(v)
     autoRedeemEnabled = v.Toggle
@@ -6995,6 +7015,7 @@ end)
                             local autoClickEnabled = false
                             local autoClickTask = nil
 
+do  -- [auto-scope]
                             local screenGui -- will hold the GUI instance
 
                             local SPEED_STEP = 20
@@ -7114,6 +7135,7 @@ end)
                                     destroyGui()
                                 end
                             end)
+end  -- [auto-scope]
 
 
                  
@@ -7214,6 +7236,7 @@ end)
                     
                      
                     -- Dictionary to map item names to their respective IDs
+do  -- [auto-scope]
                     local itemIDMapping = {
                         ["Stone"] = 10,
                         ["Tin Ore"] = 11,
@@ -7334,6 +7357,7 @@ end)
                             end
                         end
                     end)
+end  -- [auto-scope]
 
 
 
@@ -7390,6 +7414,7 @@ local button = sector6.element('Button', 'Redeem volcanicMinerals x100', false, 
 
 
 local HttpService = game:GetService("HttpService")
+do  -- [auto-scope]
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
@@ -7505,12 +7530,14 @@ local toggle = sector3.element('Toggle', 'Island Unique Hair Webhook', false, fu
         -- ---- -- print(("IUH Webhook disabled!")
     end
 end)
+end  -- [auto-scope]
 
 
 
 
 
 
+do  -- [auto-scope]
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
@@ -7618,6 +7645,7 @@ function hideWebhookBox()
         webhookBoxGui = nil
     end
 end
+end  -- [auto-scope]
 
 -- === YOUR SECTOR TOGGLE ===
 local toggle = sector3.element('Toggle', 'Custom Webhook Box', false, function(v)
@@ -7647,6 +7675,7 @@ end)
 
 
                     
+do  -- [auto-scope]
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
@@ -7713,12 +7742,14 @@ local Toggle = sector3.element('Toggle', 'Fly', false, function(v)
         -- ---- -- print(("Fly disabled!")
     end
 end)
+end  -- [auto-scope]
 
 
 
 
                     
                     
+do  -- [auto-scope]
                     local AntiAfkEnabled = false  -- Flag to track if the Basic Anti-AFK is enabled
                     local AntiAfkCoreEnabled = false  -- Flag to track if the Core Anti-AFK is enabled
                     local coreTask = nil  -- Task reference for the Core Anti-AFK to stop it later
@@ -7790,6 +7821,7 @@ end)
                             stopCoreAntiAfk()  -- Stops core Anti-AFK
                         end
                     end)
+end  -- [auto-scope]
                     
                    local identifiers = {} -- Table to keep track of existing horse names in the inventory
 local specialHorsesLogged = {} -- Table to keep track of special horses that have already been logged
@@ -7849,6 +7881,7 @@ end
                     end
                     
                     -- Define the folder name and file name for the webhook URL
+do  -- [auto-scope]
                     local folderName = "TSB HUB SETTNINGS"
                     local fileName = "webhook.txt"
                     
@@ -8023,6 +8056,7 @@ end
                           _G.isScriptRunning = false
                        end
                     end)
+end  -- [auto-scope]
                     
                     
                     
@@ -8689,6 +8723,7 @@ end)
 
 
 
+do  -- [auto-scope]
 local refs = require(game.ReplicatedStorage.References)
 local travelHandler = require(refs.PlayerScripts.Secondary.TravelHandler)
 
@@ -8780,6 +8815,7 @@ local toggle = sector.element('Toggle', 'TP island, Jung, Lun, Volc', false, fun
         { island = "Lunar Islands",  waitTime = 220 },
     })
 end)
+end  -- [auto-scope]
 
                     
                  
@@ -9039,6 +9075,7 @@ end
 
 
                     
+do  -- [auto-scope]
                     local BillboardGuis = {}  -- Global table to track all created BillboardGuis
                     local connections = {}    -- Table to track all event connections
                     
@@ -9208,6 +9245,8 @@ end
                             _G.isScriptRunning = false  -- Stop the script
                         end
                     end)
+end  -- [auto-scope]
+do  -- [auto-scope]
                     local notificationConnections = {}  -- Table to track event connections for notifications
                     
                     local toggle = sector10.element('Toggle', 'Horse Notification', false, function(v)
@@ -9400,6 +9439,7 @@ end
                             notificationConnections = {} -- Clear the connections table
                         end
                     end)
+end  -- [auto-scope]
                     
                     
                     
@@ -9407,6 +9447,7 @@ end
                     
                     ----------------------
                   
+do  -- [auto-scope]
 local islands = game:GetService("Workspace").Islands
 local lavaPartsFolder = islands:FindFirstChild("Volcano Island") and islands["Volcano Island"]:FindFirstChild("LavaParts")
 
@@ -9414,6 +9455,7 @@ local lavaPartsFolder = islands:FindFirstChild("Volcano Island") and islands["Vo
 if lavaPartsFolder then
     lavaPartsFolder:Destroy()
 end
+end  -- [auto-scope]
 
 
 
@@ -9514,6 +9556,7 @@ local button = sector3.element('Button', 'Tp Pumpkin', nil, function()
                     end)
 
 -- Reference the specific remote once
+do  -- [auto-scope]
 local tradeRemote = game:GetService("ReplicatedStorage")
     .Communication
     .Functions["15"]
@@ -9551,6 +9594,7 @@ local toggle = sector3.element('Toggle', 'Golden Apple (May Cause Lag)', false, 
         _G.isScriptRunning = false
     end
 end)
+end  -- [auto-scope]
 
 
 
@@ -10175,6 +10219,7 @@ local button = sector3.element('Button', 'Anti void', nil, function()
                     
                     -- Table to store identifiers (UUIDs)
                     local identifiers = {}
+do  -- [auto-scope]
                     local correctRemote = nil  -- Variable to store the correct remote number after detection
                     
                     -- Function to log objects and collect identifiers
@@ -10318,6 +10363,7 @@ local button = sector3.element('Button', 'Anti void', nil, function()
                             isSelling = false  -- Stop any future selling action
                         end
                     end)
+end  -- [auto-scope]
                     
 
 
@@ -10338,6 +10384,7 @@ local button = sector3.element('Button', 'Anti void', nil, function()
 
 
 
+do  -- [auto-scope]
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local CoreGui = game:GetService("CoreGui")
@@ -10528,6 +10575,7 @@ while true do
 
     task.wait(5) -- Run every 5 seconds for both detections
 end
+end  -- [auto-scope]
 
 
 
@@ -10894,8 +10942,6 @@ while true do
 
     task.wait(5) -- Run every 5 seconds for both detections
 end
-
-
 
 
 
