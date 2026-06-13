@@ -1,5 +1,5 @@
-
-
+print("p")
+wait(1)
 
                     
 local VirtualInputManager = game:GetService("VirtualInputManager")
